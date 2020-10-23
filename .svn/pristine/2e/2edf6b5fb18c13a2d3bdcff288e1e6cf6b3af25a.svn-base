@@ -1,9 +1,0 @@
-.social-login
-	button.social-login__github
-		span
-			i.fab.fa-github
-		|깃허브 로그인
-	button.social-login__facebook
-		span
-			i.fab.fa-facebook
-		|페이스북 로그인

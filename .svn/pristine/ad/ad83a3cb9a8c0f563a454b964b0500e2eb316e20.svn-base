@@ -1,7 +1,0 @@
-import routes from "./routes";
-
-export const localsMiddleware = (req, res, next) => {
-  res.locals.siteName = "타이틀";
-  res.locals.routes = routes; // 객체도 추가할 수 있음
-  next();
-};

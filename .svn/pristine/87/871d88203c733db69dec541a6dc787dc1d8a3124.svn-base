@@ -1,7 +1,0 @@
-import app from "./app";
-
-const PORT = 5002;
-
-const handleListening = () => console.log(`URL : http://localhost:${PORT}`);
-
-app.listen(PORT, handleListening);
