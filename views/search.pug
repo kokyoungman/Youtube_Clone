@@ -1,0 +1,18 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+	.search_header
+		h3 검색어 : #{searchingBy}
+	.search__videos
+		if videos.length === 0
+			h5 해당 비디오가 없습니다.
+		each video in videos
+			+videoBlock({
+				id: video.id,
+				title: video.title,
+				views: video.views,
+				fileUrl: video.fileUrl,
+				genres: video.genres,
+				description: video.description
+			})

@@ -1,0 +1,11 @@
+.record-container {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 50px;
+
+  video {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: $black; // 영상이 없을 경우를 위해서 추가함
+  }
+}

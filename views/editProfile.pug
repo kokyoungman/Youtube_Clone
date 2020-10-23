@@ -1,0 +1,11 @@
+extends layouts/main
+
+block content
+	.form-container
+		form(action=`${routes.users}${routes.editProfile}`, method="post", enctype="multipart/form-data")
+			.fileUpload
+				label(for="avatar") 아바타 파일 :
+				input(type="file", id="avatar", name="avatar", accept="image/*")
+			input(type="text", name="name", placeholder="이름을 입력해주세요.", value=loginUser.name)
+			input(type="email", name="email", placeholder="이메일을 입력해주세요.", value=loginUser.email)
+			input(type="submit", value="프로필 수정")

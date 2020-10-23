@@ -1,0 +1,39 @@
+extends layouts/main
+include mixins/videoPlayer
+
+block content
+	.video-detail__container
+		+videoPlayer({
+			fileUrl: video.fileUrl
+		})
+		.video__info
+			if loginUser && video.creator.id === loginUser._id
+				a(href=routes.editVideo(video.id))
+					button 비디오 편집
+			h5.video__title=video.title
+			ul
+				each genre in video.genres
+					li.video__genre=genre
+			p.video__description=video.description
+			if video.views === 1
+				span.videoBlock__views 1 view
+			else	
+				span.videoBlock__views #{video.views} views
+			.video__author
+				|업로더 : 
+				a(href=routes.userDetail(video.creator.id))=video.creator.name
+		.video__comments
+			span.video__comment-number
+				|댓글 갯수 : 
+				span#js-commentNumber=video.comments.length
+				| 개
+			form.add__comment#js-addComment
+				input(type="text", placeholder="댓글을 입력해주세요.")
+			ul.video__comments-list#js-commentList
+				each comment in comments.reverse()
+					if loginUser && comment.creator.id === loginUser._id
+						li(id=`${comment.id}`)
+							span.js-comment-span=`[${comment.creator.name}] ${comment.text}`
+					else
+						li(id="")
+							span.js-comment-span=`[${comment.creator.name}] ${comment.text}`

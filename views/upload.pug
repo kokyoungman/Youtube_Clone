@@ -1,0 +1,15 @@
+extends layouts/main
+
+block content
+	.form-container
+		.record-container#js-recordContainer
+			video#js-videoPreview
+			button#js-recordButton 레코딩 시작
+		form(action=`${routes.videos}${routes.upload}`, method="post", enctype="multipart/form-data")
+			.fileUpload
+				label(for="file") 비디오 파일 :
+				input(type="file", id="video", name="videoFile", required, accept="video/*")
+			input(type="text", name="title", placeholder="제목을 입력해주세요.", required)
+			input(type="text", name="genres", placeholder="장르들을 쉼표로 구분해서 입력해주세요.", required)
+			textarea(name="description", placeholder="설명을 입력해주세요.", required)
+			input(type="submit", value="비디오 업로드")

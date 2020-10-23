@@ -1,0 +1,13 @@
+import routes from "./routes";
+
+export const localsMiddleware = (req, res, next) => {
+  res.locals.siteName = "타이틀";
+  res.locals.routes = routes;
+
+  // 임시로 유저 로그인 정보를 추가함
+  res.locals.user = {
+    isAuthenticated: true,
+    id: 10,
+  };
+  next();
+};

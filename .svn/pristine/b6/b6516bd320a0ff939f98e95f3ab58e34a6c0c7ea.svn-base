@@ -1,0 +1,26 @@
+export const videos = [
+  {
+    id: 100,
+    title: "제목1",
+    description: "설명1",
+    views: 123,
+    videoFile: "https://archive.org/details/BigBuckBunny_124",
+    creator: {
+      id: 10,
+      name: "업로더 이름1",
+      email: "a@gmail.com",
+    },
+  },
+  {
+    id: 101,
+    title: "제목2",
+    description: "설명2",
+    views: 123,
+    videoFile: "https://archive.org/details/BigBuckBunny_124",
+    creator: {
+      id: 11,
+      name: "업로더 이름2",
+      email: "a@gmail.com",
+    },
+  },
+];

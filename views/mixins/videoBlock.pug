@@ -1,0 +1,13 @@
+mixin videoBlock(video = {})
+	.videoBlock
+		a(href=routes.videoDetail(video.id))
+			video.videoBlock__thumbnail(src=`/${video.fileUrl}`, controls=false)
+			h4.videoBlock__title=video.title
+			ul
+				each genre in video.genres
+					li.videoBlock__genre=genre
+			p.videoBlock__description=video.description
+			if video.views === 1
+				h6.videoBlock__views 1 view
+			else
+				h6.videoBlock__views #{video.views} views

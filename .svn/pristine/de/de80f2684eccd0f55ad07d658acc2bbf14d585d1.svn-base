@@ -1,0 +1,10 @@
+extends layouts/main
+
+block content
+	.form-container
+		form(action=`${routes.videos}${routes.upload}`, method="post")
+			label(for="file") 비디오 파일 :
+			input(type="file", id="video", name="video")
+			input(type="text", name="title", placeholder="제목을 입력해주세요.")
+			textarea(name="description", placeholder="설명을 입력해주세요.")
+			input(type="submit", value="비디오 업로드")
